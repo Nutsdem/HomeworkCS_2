@@ -2,20 +2,18 @@
 Console.WriteLine("Введите число = ");
 int num = int.Parse(Console.ReadLine());
 
-if(num < 100)
+string str = num.ToString();
+int[] array = new int[str.Length];
+for( int i=0; i< str.Length; i++)
 {
-    Console.WriteLine("Третего числа нет!");
-}
-if(num > 99 & num < 1000)
-{
-    Console.WriteLine((num - (num % 100)) / 100);
+     array[i] = int.Parse(str[i].ToString());
 }
 
-if (num > 999)
+if(str.Length > 2)
 {
-    Console.WriteLine(((num % 1000) - (num % 100)) % 10);
+Console.WriteLine(array[2]);
 }
 else
 {
-    Console.WriteLine(((num % 1000) - (num % 100)) % 10);
+    Console.WriteLine("Третьей цифры нет!");
 }
